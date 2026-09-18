@@ -1,6 +1,7 @@
 # Planning
 
 - [Planning](#planning)
+  - [Summary](#summary)
   - [Hard requirements](#hard-requirements)
     - [Protocols](#protocols)
       - [Basic](#basic)
@@ -13,6 +14,21 @@
   - [ISA](#isa)
     - [Opcode - Classes](#opcode---classes)
 
+## Summary
+
+| Category    |       Value        |
+| ----------- | :----------------: |
+| Technology  | IHP's 130nm CMOS5L |
+| Design Tech |     6x4 tiles      |
+| Area        |   ~24,000 cells    |
+| Clock speed |       50 MHz       |
+| IO          |     8 IO pins      |
+:Hard requirements
+
+| Category | Value |
+| -------- | :---: |
+|          |       |
+:Design choices
 
 ## Hard requirements
 
@@ -52,11 +68,11 @@ We got at least 6x4 tiles, with 1000 logic cells per tile. This means 24000 logi
 
 ### Timing
 
-Looking at the charts above, we should aim for 50-100 MHz clock speed. We need to oversample to be able to load and handle data on the interface. Let's assume we want to support 100MHz, so we should oversample by 4x for all interfaces except I2C which need 5x (for the 5MHz max speed).
+Looking at the charts above, we should aim for 50-100 MHz clock speed. We need to oversample to be able to load and handle data on the interface. We will support **50 MHz** as it is the clock driven by the RP2040 board.
 
 ### Physical pins
 
-With the Tiny Tapeout possibilities, we could have a 8 IO pin crossbar which should be more than enough for our protocols.
+With the Tiny Tapeout possibilities, we could have a **8 IO pin** crossbar which should be more than enough for our protocols.
 
 
 ### Gate estimation - AI
